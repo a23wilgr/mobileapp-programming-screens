@@ -15,13 +15,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button b = findViewById(R.id.button);
-
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("==>","Du är på väg");
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtra("name", "Hejsan hoppsan"); // Optional
+                intent.putExtra("name", "Hejsan hoppsan");
                 startActivity(intent);
             }
         });

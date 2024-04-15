@@ -1,39 +1,30 @@
 
 # Rapport
 
-**Skriv din rapport här!**
+Har skapat en andra activity.xml, så att två olika sidor ska finnas. En knapp har lagts till på första
+sidan, som ska leda till den andra sidan. Det finns en intent med data, den texten skrivs ut då den
+andra activity-sidan öppnas. Två textViews har lagts till på andra activity-sidan. En knapp och en textView på första sidan.
 
-_Du kan ta bort all text som finns sedan tidigare_.
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
+Programkoden nedan visar att det finns en knapp som ska gå att klicka på. Inuti onClick visar koden att då knappen klickas på,
+tas man från MainActivity-sidan, till MainActivity2. Intent.putExtra är sträng med text, texten kommer skrivas ut på den andra
+activity-sidan inuti en textView.
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
+Button b = findViewById(R.id.button);
+b.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View view) {
+        Log.d("==>","Du är på väg");
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        intent.putExtra("name", "Hejsan hoppsan");
+        startActivity(intent);
 }
+});
 ```
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](ScreenshotMain1.png)
+![](ScreenshotMain2.png)
 
 Läs gärna:
 
